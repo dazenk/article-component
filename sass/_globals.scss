@@ -1,0 +1,261 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+// Mixins
+@mixin display($d ,$f-direction: row, $j-content: flex-start, $a-items: stretch) {
+    display: $d;
+    flex-direction: $f-direction;
+    justify-content: $j-content;
+    align-items: $a-items;
+}
+
+// Variables
+$very-dark-grayish-blue: hsl(217, 19%, 35%);
+$desaturated-dark-blue: hsl(214, 17%, 51%);
+$grayish-blue: hsl(212, 23%, 69%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+$white: hsl(0, 0%, 100%);
+
+// Styles
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-width: 100vw;
+
+    body {
+        @include display($d: flex, $j-content: center, $a-items: center);
+        min-height: 100vh;
+        background-color: $light-grayish-blue;
+        font-family: 'Manrope', sans-serif;
+        overflow-x: hidden;
+    }
+}
+
+.container {
+    width: 45.6rem;
+    height: 17.6rem;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    border-radius: 0.6rem;
+    margin: 20px 0 20px 0;
+
+    .left-section {
+        @include display($d: flex, $j-content: center, $a-items: center);
+        width: 17.8rem;
+        height: 100%;
+
+        img {
+            border-radius: 0.6rem 0 0 0.6rem;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .right-section {
+        @include display($d: flex, $f-direction: column, $j-content: space-between);
+        background-color: $white;
+        border-radius: 0 0.6rem 0.6rem 0;
+        width: 27.8rem;
+        height: 100%;
+        padding: 2rem 2.5rem 2rem 2.5rem;
+        box-sizing: border-box;
+        position: relative;
+
+        h1 {
+            color: $very-dark-grayish-blue;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        p {
+            color: $desaturated-dark-blue;
+            font-size: 13px;
+            font-weight: 500;
+            text-align: left;
+            line-height: 20px;
+        }
+
+        .card-footer {
+            display: flex;
+            width: 100%;
+            height: 2.5rem;
+            justify-content: space-between;
+            position: relative;
+
+            .profile-content {
+                display: flex;
+
+                .image {
+                    width: 2.5rem;
+                    height: 100%;
+                    margin-right: 1rem;
+    
+                    img {
+                        border-radius: 1.25rem;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+    
+                .desc {
+                    @include display($d: flex, $f-direction: column, $j-content: center, $a-items: flex-start);
+    
+                    .name {
+                        color: $very-dark-grayish-blue;
+                        font-weight: 700;
+                        font-size: 13px;
+                    }
+    
+                    .date {
+                        color: $grayish-blue;
+                        font-weight: 400;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .share {
+                @include display($d: flex, $j-content: center, $a-items: center);
+                background-color: $light-grayish-blue;
+                border: none;
+                cursor: pointer;
+                align-self: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 15px;
+                background-image: url("../assets/img/icon-share.svg");
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+
+        .popup {
+            @include display($d: none, $j-content: center, $a-items: center);
+            background-color: $very-dark-grayish-blue;
+            border-radius: 0.6rem;
+            width: 15.5rem;
+            height: 3.5rem;
+            position: absolute;
+            left: 265px;
+            top: 130px;
+
+            .contact {
+                @include display($d: flex, $j-content: center, $a-items: center);
+                width: 100%;
+                gap: 1rem;
+
+                h3 {
+                    color: $grayish-blue;
+                    font-size: 13px;
+                    font-weight: 500;
+                    letter-spacing: 5px;
+                }
+
+                a {
+                    width: 20px;
+                    height: 20px;
+
+                    &:nth-child(3) {
+                        width: 20px;
+                        height: 17px;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .triangle {
+                width: 0;
+                height: 0;
+                border-top: 15px solid $very-dark-grayish-blue;
+                border-left: 12.5px solid transparent;
+                border-right: 12.5px solid transparent;
+                position: absolute;
+                bottom: -12px;
+            }
+        }
+    }
+}
+
+// Media queries
+@media (max-width: 925px) {
+    .container {
+        width: 27.8rem;
+        height: 29.8rem;
+        flex-direction: column;
+    
+        .left-section {
+            width: 100%;
+            height: 40%;
+    
+            img {
+                border-radius: 0.6rem 0.6rem 0 0;
+            }
+        }
+    
+        .right-section {
+            border-radius: 0 0 0.6rem 0.6rem;
+            width: 100%;
+            height: 60%;
+        }
+    }
+}
+
+@media (max-width: 625px) {
+    .container {
+        width: 20.375rem;
+        height: 31.6rem;
+    
+        .left-section {
+            height: 39%;
+        }
+    
+        .right-section {
+            padding: 32px 35px 16px 35px;
+            height: 61%;
+            justify-content: normal;
+    
+            h1 {
+                line-height: 24px;
+                font-size: 16px;
+                margin-bottom: 13px;
+            }
+    
+            .card-footer {
+                margin-top: 35px;
+    
+                .share {
+                    z-index: 1;
+                }
+            }
+
+            .popup {
+                border-radius: 0 0 0.6rem 0.6rem;
+                height: 4.5rem;
+                left: 0;
+                top: 237px;
+                width: 100%;
+                padding-left: 2.1875rem;
+                box-sizing: border-box;
+                justify-content: flex-start;
+
+                .contact {
+                    justify-content: flex-start;
+                }
+
+                .triangle {
+                    display: none;
+                }
+            }
+        }
+    }
+}

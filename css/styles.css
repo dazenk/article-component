@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-width: 100vw;
+}
+html body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: hsl(210deg, 46%, 95%);
+  font-family: "Manrope", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 45.6rem;
+  height: 17.6rem;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  border-radius: 0.6rem;
+  margin: 20px 0 20px 0;
+}
+.container .left-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 17.8rem;
+  height: 100%;
+}
+.container .left-section img {
+  border-radius: 0.6rem 0 0 0.6rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 0 0.6rem 0.6rem 0;
+  width: 27.8rem;
+  height: 100%;
+  padding: 2rem 2.5rem 2rem 2.5rem;
+  box-sizing: border-box;
+  position: relative;
+}
+.container .right-section h1 {
+  color: hsl(217deg, 19%, 35%);
+  font-size: 20px;
+  font-weight: 700;
+  text-align: left;
+}
+.container .right-section p {
+  color: hsl(214deg, 17%, 51%);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  line-height: 20px;
+}
+.container .right-section .card-footer {
+  display: flex;
+  width: 100%;
+  height: 2.5rem;
+  justify-content: space-between;
+  position: relative;
+}
+.container .right-section .card-footer .profile-content {
+  display: flex;
+}
+.container .right-section .card-footer .profile-content .image {
+  width: 2.5rem;
+  height: 100%;
+  margin-right: 1rem;
+}
+.container .right-section .card-footer .profile-content .image img {
+  border-radius: 1.25rem;
+  width: 100%;
+  height: 100%;
+}
+.container .right-section .card-footer .profile-content .desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.container .right-section .card-footer .profile-content .desc .name {
+  color: hsl(217deg, 19%, 35%);
+  font-weight: 700;
+  font-size: 13px;
+}
+.container .right-section .card-footer .profile-content .desc .date {
+  color: hsl(212deg, 23%, 69%);
+  font-weight: 400;
+  font-size: 12px;
+}
+.container .right-section .card-footer .share {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(210deg, 46%, 95%);
+  border: none;
+  cursor: pointer;
+  align-self: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-image: url("../assets/img/icon-share.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.container .right-section .popup {
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(217deg, 19%, 35%);
+  border-radius: 0.6rem;
+  width: 15.5rem;
+  height: 3.5rem;
+  position: absolute;
+  left: 265px;
+  top: 130px;
+}
+.container .right-section .popup .contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+.container .right-section .popup .contact h3 {
+  color: hsl(212deg, 23%, 69%);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+.container .right-section .popup .contact a {
+  width: 20px;
+  height: 20px;
+}
+.container .right-section .popup .contact a:nth-child(3) {
+  width: 20px;
+  height: 17px;
+}
+.container .right-section .popup .contact a img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.container .right-section .popup .triangle {
+  width: 0;
+  height: 0;
+  border-top: 15px solid hsl(217deg, 19%, 35%);
+  border-left: 12.5px solid transparent;
+  border-right: 12.5px solid transparent;
+  position: absolute;
+  bottom: -12px;
+}
+
+@media (max-width: 925px) {
+  .container {
+    width: 27.8rem;
+    height: 29.8rem;
+    flex-direction: column;
+  }
+  .container .left-section {
+    width: 100%;
+    height: 40%;
+  }
+  .container .left-section img {
+    border-radius: 0.6rem 0.6rem 0 0;
+  }
+  .container .right-section {
+    border-radius: 0 0 0.6rem 0.6rem;
+    width: 100%;
+    height: 60%;
+  }
+}
+@media (max-width: 625px) {
+  .container {
+    width: 20.375rem;
+    height: 31.6rem;
+  }
+  .container .left-section {
+    height: 39%;
+  }
+  .container .right-section {
+    padding: 32px 35px 16px 35px;
+    height: 61%;
+    justify-content: normal;
+  }
+  .container .right-section h1 {
+    line-height: 24px;
+    font-size: 16px;
+    margin-bottom: 13px;
+  }
+  .container .right-section .card-footer {
+    margin-top: 35px;
+  }
+  .container .right-section .card-footer .share {
+    z-index: 1;
+  }
+  .container .right-section .popup {
+    border-radius: 0 0 0.6rem 0.6rem;
+    height: 4.5rem;
+    left: 0;
+    top: 237px;
+    width: 100%;
+    padding-left: 2.1875rem;
+    box-sizing: border-box;
+    justify-content: flex-start;
+  }
+  .container .right-section .popup .contact {
+    justify-content: flex-start;
+  }
+  .container .right-section .popup .triangle {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
